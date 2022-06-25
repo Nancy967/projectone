@@ -14,6 +14,7 @@ public class StudentRunner {
 
         Student stu = new Student(name, english, math);
         stu.print();
+
         /*Student stu = new Student("Belly",91,62);
         stu.print();*/
     }

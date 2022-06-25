@@ -14,6 +14,7 @@ fun main() {
 
     val stu = Student(name, english, math)
     stu.print()
+
     /*val stu = Student("Zoey", 52, 74)
     stu.print()*/
 }
