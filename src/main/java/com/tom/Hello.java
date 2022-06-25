@@ -2,11 +2,19 @@ package com.tom;
 
 public class Hello {
     public static void main(String[] args) {
-//        System.out.println("Hello World");
-        Person p = new Person();
+        /* System.out.println("Hello World"); */
+        Person p = new Person("Mike",73.8f, 1.694f);
         p.hello();
+        p.weight = 55.2f;
+        p.height = 1.6f;
+        System.out.println(p.bmi());
 
-        int age = 21;
+        int score = 87;
+        System.out.println(score<80 || score>90);
+        char c = 'A';
+        System.out.println(c>'a');
+
+        /*int age = 21;
         Integer age2 = 22;
         char c = '我';
         Character c2 = 'A';
@@ -15,6 +23,6 @@ public class Hello {
         double height = 163.4;
         boolean adult = true;
         boolean entroll = false;
-        String name = "Nancy";
+        String name = "Nancy";*/
     }
 }
