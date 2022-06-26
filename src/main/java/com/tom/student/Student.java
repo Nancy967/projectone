@@ -22,7 +22,16 @@ public class Student {
     }
 
     public void print(){
-        System.out.println(name +"\t"+ english +"\t"+ math
-                +"\t"+ (english+math)/2);
+        System.out.print(name +"\t"+ english +"\t"+ math
+                +"\t"+ getAversge());
+        if (getAversge() >= 60){
+            System.out.println("\tPASS");
+        } else {
+            System.out.println("\tFAILED");
+        }
+    }
+
+    public int getAversge (){
+        return (english+math)/2;
     }
 }

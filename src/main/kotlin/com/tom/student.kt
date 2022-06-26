@@ -19,7 +19,12 @@ fun main() {
 class Student(var name:String?, var english:Int, var math:Int){
     fun print(){
         println(name +"\t"+ english +"\t"+ math
-                +"\t"+ (english+math)/2 )
+                +"\t"+ getAversge() + "\t"
+                + if (getAversge() >= 60) "PASS" else "FAILED" )
+    }
+
+    fun getAversge ():Int{
+        return (english+math)/2
     }
 
     fun hightest() : Int {
