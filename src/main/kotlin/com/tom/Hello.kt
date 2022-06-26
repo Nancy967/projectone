@@ -2,6 +2,14 @@ package com.tom
 
 fun main() {
 //    println("Hello Kotlin")
+
+    var s:String? = "abcdefg"
+    s = null
+    println(s?.get(5))
+    println(s?.length)
+    println(s?.substring(2))
+    println(s?.substring(0,5))
+
     val h = Human(weight = 55.2f, height = 1.6f)
     println(h.bmi())
     h.hello()

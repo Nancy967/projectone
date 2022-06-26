@@ -3,6 +3,13 @@ package com.tom;
 public class Hello {
     public static void main(String[] args) {
         /* System.out.println("Hello World"); */
+
+        String s = "abcdef";
+        System.out.println(s.charAt(2));
+        System.out.println(s.length());
+        System.out.println(s.substring(3));
+        System.out.println(s.substring(1,4));
+
         Person p = new Person("Mike",73.8f, 1.694f);
         p.hello();
         p.weight = 55.2f;
