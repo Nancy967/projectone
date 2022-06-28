@@ -6,7 +6,7 @@ public class StudentRunner {
     public static void main(String[] args) {
 //        userIntput();
 
-        Student stu = new Student("Billy", 85, 92);
+        Student stu = new Student("Billy", 65, 92);
         stu.print();
         System.out.println("High score: " + stu.hightest());
 

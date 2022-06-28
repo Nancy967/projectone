@@ -9,8 +9,8 @@ fun main() {
     stu.print()
     println("High score : ${stu.hightest()}")
 
-    var billy = 123
-    println("Test billy : $billy")
+    /*var billy = 123
+    println("Test billy : $billy")*/
 
     /*val stu = Student("Zoey", 52, 74)
     stu.print()*/
@@ -18,26 +18,28 @@ fun main() {
 
 class Student(var name:String?, var english:Int, var math:Int){
     fun print(){
-        println(name +"\t"+ english +"\t"+ math
-                +"\t"+ getAversge() + "\t"
-                + if (getAversge() >= 60) "PASS" else "FAILED" )
+        println("$name\t$english\t$math\t${getAverage()}\t${passOrFailed()}\t${grading()}")
     }
 
-    fun getAversge ():Int{
-        return (english+math)/2
+    fun getAverage() = (english+math)/2
+
+    fun grading() = when (getAverage()){
+        in 90..100 -> 'A'
+        in 80..89 -> 'B'
+        in 70..79 -> 'C'
+        in 60..69 -> 'D'
+        else -> 'F'
     }
 
-    fun hightest() : Int {
-//        var max = if (english > math) english else math
-        var max = if (english > math){
+    fun passOrFailed() = if (getAverage() >= 60) "PASS" else "FAILED"
+
+    fun hightest() = if (english > math){
             println("english")
             english
         } else {
             println("math")
             math
         }
-        return max
-    }
 
 private fun userInput() {
     val scanner = Scanner(System.`in`)
@@ -55,7 +57,5 @@ private fun userInput() {
     stu.checkName()
 }
 
-    fun checkName(){
-        println(name?.length)
-    }
+    fun checkName() = name?.length
 }
