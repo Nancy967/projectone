@@ -34,28 +34,28 @@ class Student(var name:String?, var english:Int, var math:Int){
     fun passOrFailed() = if (getAverage() >= 60) "PASS" else "FAILED"
 
     fun hightest() = if (english > math){
-            println("english")
-            english
-        } else {
-            println("math")
-            math
-        }
+        println("english")
+        english
+    } else {
+        println("math")
+        math
+    }
 
-private fun userInput() {
-    val scanner = Scanner(System.`in`)
-    print("Please enter student's name:\n")
+    private fun userInput() {
+        val scanner = Scanner(System.`in`)
+        print("Please enter student's name:\n")
 //    var name = scanner.next()
-    var name = null
-    print("Please enter student's english:")
-    var english = scanner.nextInt()
-    print("Please enter student's math:")
-    var math = scanner.nextInt()
+        var name = null
+        print("Please enter student's english:")
+        var english = scanner.nextInt()
+        print("Please enter student's math:")
+        var math = scanner.nextInt()
 
 
-    val stu = Student(name, english, math)
-    stu.print()
-    stu.checkName()
-}
+        val stu = Student(name, english, math)
+        stu.print()
+        stu.checkName()
+    }
 
     fun checkName() = name?.length
 }
