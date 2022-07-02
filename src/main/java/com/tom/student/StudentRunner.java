@@ -7,11 +7,13 @@ import java.util.Scanner;
 public class StudentRunner {
     public static void main(String[] args) {
 //        userIntput();
-        com.kotlin.Student.setPass(75);
-//        Student.pass = 75;
+//        com.kotlin.Student.setPass(75);
+        Student.pass = 75;
         Student stu = new Student("Billy", 65, 92);
         Student stu1 = new Student("Rose", 75, 62);
         Student stu2 = new Student("Cindy", 75, 88);
+        GraduateStudent gstu = new GraduateStudent("Emily", 77,80,72);
+        gstu.print();
 //        System.out.println("本次及格分數為 "+Student.pass);
         stu.print();
         stu1.print();

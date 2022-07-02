@@ -1,31 +1,19 @@
 package com.tom.student;
-public class Student {
-    String id;
-    String name;
-    int english;
-    int math;
-    static int pass = 60;
 
-    public Student(String name, int english, int math) {
-        this.name = name;
-        this.english = english;
-        this.math = math;
+public class GraduateStudent extends Student{
+    int thesis;
+    static int pass = 80;
+
+    public GraduateStudent(String name, int english, int math, int thesis){
+        super(name, english,math);
+        this.thesis = thesis;
     }
 
-    public int hightest(){
-        /*int max = ;
-        if (english > math){
-            max = english;
-        } else {
-            max = math;
-        }*/
-        return (english > math)? english : math;
-    }
-
-    public void print(){
+    @Override
+    public void print() {
         int average = getAverage();
-        System.out.print(name +"\t"+ english +"\t"+ math
-                +"\t"+ getAverage()+"\t"
+        System.out.print(name +"\t"+ english +"\t"+ math +"\t"
+                + thesis +"\t"+ getAverage()+"\t"
 //                + ((getAverage() >= com.kotlin.Student.getPass())? "PASS" : "FAILED"));
                 + ((getAverage() >= pass)? "PASS" : "FAILED"));
         char grading = 'F';
@@ -53,9 +41,5 @@ public class Student {
         } else {
             System.out.println("\tFAILED");
         }*/
-    }
-
-    public int getAverage (){
-        return (english+math)/2;
     }
 }

@@ -8,6 +8,8 @@ fun main() {
     val stu = Student("Zoey", 52, 74)
     val stu1 = Student("Rose", 75, 62)
     val stu2 = Student("Cindy", 75, 88)
+    var gstu = GraduateStudent("Emily", 75,80,72)
+    gstu.print();
     stu.print()
     stu1.print()
     stu2.print()
@@ -20,7 +22,19 @@ fun main() {
     stu.print()*/
 }
 
-class Student(var name:String?, var english:Int, var math:Int){
+class GraduateStudent(name: String?, english: Int, math: Int, var thesis:Int):Student(name, english, math){
+    companion object{
+        var pass = 80
+    }
+
+    override fun print() {
+        println("$name\t$english\t$math\t$thesis\t${getAverage()}\t${passOrFailed()}\t${grading()}")
+    }
+
+    override fun passOrFailed() = if (getAverage() >= pass) "PASS" else "FAILED"
+}
+
+open class Student(var name:String?, var english:Int, var math:Int){
     companion object{
         @JvmStatic
         var pass = 60
@@ -29,7 +43,7 @@ class Student(var name:String?, var english:Int, var math:Int){
         }
     }
 
-    fun print(){
+    open fun print(){
         println("$name\t$english\t$math\t${getAverage()}\t${passOrFailed()}\t${grading()}")
     }
 
@@ -43,7 +57,7 @@ class Student(var name:String?, var english:Int, var math:Int){
         else -> 'F'
     }
 
-    fun passOrFailed() = if (getAverage() >= pass) "PASS" else "FAILED"
+    open fun passOrFailed() = if (getAverage() >= pass) "PASS" else "FAILED"
 
     fun hightest() = if (english > math){
         println("english")
