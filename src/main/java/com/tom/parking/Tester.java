@@ -11,6 +11,17 @@ import java.util.Date;
 
 public class Tester {
     public static void main(String[] args) {
+
+        LocalDateTime enter = LocalDateTime.of(2021,6,23,11,55,24);
+        LocalDateTime leave = LocalDateTime.of(2021,6,23,14,37,12);
+        Car car = new Car("PP-0001",enter);
+        car.setLeave(leave);
+        System.out.println("車子停了"+ car.getDuration() +"分鐘");
+        long hours = (long) Math.ceil(car.getDuration()/60.0);
+        System.out.println("總計"+ hours +"小時");
+        System.out.println("應付"+ 30*hours +"元");
+
+
 //        java();
 
 //        java8();
