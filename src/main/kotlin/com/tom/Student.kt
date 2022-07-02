@@ -1,12 +1,16 @@
-package com.tom
+package com.kotlin
 
 import java.util.Scanner
 
 fun main() {
 //    userInput()
-
+    Student.pass = 65
     val stu = Student("Zoey", 52, 74)
+    val stu1 = Student("Rose", 75, 62)
+    val stu2 = Student("Cindy", 75, 88)
     stu.print()
+    stu1.print()
+    stu2.print()
     println("High score : ${stu.hightest()}")
 
     /*var billy = 123
@@ -17,6 +21,14 @@ fun main() {
 }
 
 class Student(var name:String?, var english:Int, var math:Int){
+    companion object{
+        @JvmStatic
+        var pass = 60
+        fun test(){
+            println("testing")
+        }
+    }
+
     fun print(){
         println("$name\t$english\t$math\t${getAverage()}\t${passOrFailed()}\t${grading()}")
     }
@@ -31,7 +43,7 @@ class Student(var name:String?, var english:Int, var math:Int){
         else -> 'F'
     }
 
-    fun passOrFailed() = if (getAverage() >= 60) "PASS" else "FAILED"
+    fun passOrFailed() = if (getAverage() >= pass) "PASS" else "FAILED"
 
     fun hightest() = if (english > math){
         println("english")

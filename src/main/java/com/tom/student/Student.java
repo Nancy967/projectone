@@ -4,6 +4,7 @@ public class Student {
     String name;
     int english;
     int math;
+    static int pass = 60;
 
     public Student(String name, int english, int math) {
         this.name = name;
@@ -25,7 +26,7 @@ public class Student {
         int average = getAverage();
         System.out.print(name +"\t"+ english +"\t"+ math
                 +"\t"+ getAverage()+"\t"
-                + ((getAverage() >= 60)? "PASS" : "FAILED"));
+                + ((getAverage() >= com.kotlin.Student.getPass())? "PASS" : "FAILED"));
         char grading = 'F';
         switch (average/10){
             case 10:
