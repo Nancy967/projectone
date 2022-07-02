@@ -1,13 +1,39 @@
 package com.tom.many;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Tester {
     public static void main(String[] args) {
+        HashMap<String, String> stocks = new HashMap<>();
+        stocks.put("2330", "台積電");
+        stocks.put("2317", "鴻海");
+        stocks.put("2330", "TSMC");
+        System.out.println(stocks.get("2330"));
+        System.out.println(stocks);
+        for (String key:stocks.keySet()){
+            System.out.println(stocks.get(key));
+        }
+//        set();
 //        arrayTest();
+//        list();
+    }
+
+    private static void set() {
+        HashSet<Integer> set = new HashSet<>();
+        set.add(5);
+        set.add(0);
+        set.add(1);
+        set.add(2);
+        set.add(3);
+        set.add(5);
+        System.out.println(set);
+        for (int n:set){
+            System.out.println(n);
+        }
+    }
+
+    private static void list() {
         ArrayList<Integer> list = new ArrayList();
         list.add(5);
         list.add(7);
