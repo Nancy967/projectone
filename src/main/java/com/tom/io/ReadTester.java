@@ -2,7 +2,7 @@ package com.tom.io;
 
 import java.io.*;
 
-public class Tester {
+public class ReadTester {
     public static void main(String[] args) {
         bufferedReader();
 //        fileReader();
