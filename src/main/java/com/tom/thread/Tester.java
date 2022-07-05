@@ -11,6 +11,11 @@ public class Tester {
             public void run() {
                 for (int i = 0; i < 5; i++) {
                     System.out.println(getName() +":"+ i);
+                    try {
+                        sleep(50);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
         };
@@ -26,11 +31,29 @@ public class Tester {
             public void run() {
                 for (int i = 0; i < 5; i++) {
                     System.out.println("Runnable:" + i);
+                    try {
+                        Thread.sleep(50);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
         };
         Thread r = new Thread(runnable);
         r.start();
+
+        //Runnable - lambda
+        new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Runnable lambda:" + i);
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }).start();
+
         System.out.println("main: end");
     }
 }
@@ -40,6 +63,11 @@ class Mythread extends Thread {
     public void run() {
         for (int i = 0; i < 5; i++) {
             System.out.println(getName() +":"+ i);
+            try {
+                sleep(50);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
